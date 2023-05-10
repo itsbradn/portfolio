@@ -23,17 +23,24 @@ const { title, description } = Astro.props;
 			title={title}
 			description={description}
 			charset="utf-8"
-			,
 			openGraph={{
 				basic: {
 					title,
 					type: "website",
 					image: "/favicon.ico",
+					
 				},
+				
 			}}
 			twitter={{
 				title,
 				description,
+				
+			}},
+			extend={{
+				meta: [
+					{ name: 'theme-color', content: '#FC5C7D'}
+				]
 			}}
 		/>
 	</head>
