@@ -1,10 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroText from "../components/HeroText.astro";
 ---
+
+<script>
+	import twemoji from "twemoji";
+
+	twemoji.parse(document.body);
+</script>
 
 <Layout
 	title="braden 🌸"
 	description="Self-taught full stack developer, turning peoples ideas into products."
 >
+	<Header />
 	<!-- Site Content -->
+	<main>
+		<section>
+			<div class="hero">
+				<h1 class="hero__title">
+					Creating easy to<br />use
+					<HeroText />.
+				</h1>
+				<button class="hero__cta header__nav-btn" data-to="work">My Work</button
+				>
+			</div>
+		</section>
+		<p class="description">Hey there! 👋 My name is braden and I'm a self-taught full stack developer. <br> I'm passionate about turning peoples ideas into real world products.</p>
+		<section id="work">
+			<h1 class="section__title">🚀 <span>My work</span></h1>
+			<div class="work-list">
+
+			</div>
+		</section>
+		<section id="tech">
+			<h1 style="font-size: 120px; margin: 0;">hello</h1>
+		</section>
+		<section id="contact">
+			<h1 style="font-size: 120px; margin: 0;">hello</h1>
+		</section>
+	</main>
 </Layout>

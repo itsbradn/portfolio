@@ -1,0 +1,25 @@
+
+<script>
+	import Typewriter from "typewriter-effect/dist/core";
+	const writer = new Typewriter("#header-text", {
+		loop: true,
+		cursor: "",
+	});
+
+	writer
+		.typeString("websites")
+		.pauseFor(2500)
+		.deleteAll()
+		.typeString("apps")
+		.pauseFor(2500)
+		.deleteAll()
+		.typeString("products")
+		.pauseFor(2500)
+		.deleteAll()
+		.typeString("tools")
+		.pauseFor(2500)
+		.deleteAll()
+		.start();
+</script>
+
+<span id="header-text" class="gradient"></span>

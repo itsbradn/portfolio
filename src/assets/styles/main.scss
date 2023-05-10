@@ -1,0 +1,246 @@
+:root {
+  --text-900: #4a4a4f;
+  --text-800: #545359;
+  --text-700: #5d5c63;
+  --text-600: #6d6c73;
+  --text-500: #7d7d82;
+  --text-400: #8e8d92;
+  --text-300: #aeaeb1;
+  --text-200: #ceced0;
+  --text-100: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: var(--text-100);
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  backdrop-filter: blur(80px);
+  background: rgba(0,0,0,.5);
+  position: sticky;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  &__logo {
+    font-size: 28px;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    border: none;
+    color: var(--text-100);
+    text-decoration: none;
+    cursor: pointer;
+    >h1 {
+      margin: inherit;
+      font-size: inherit;
+    }
+  }
+  
+  &__nav {
+    >ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+    }
+  }
+
+  &__nav-btn {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    border: none;
+    color: var(--text-200);
+    transition: color 100ms ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--text-100);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__nav {
+      >ul {
+        gap: 1rem;
+      }
+    }
+
+    &__nav-btn {
+      font-size: 14px;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  margin-top: 82px;
+
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.hero {
+
+  padding-top: 1.5rem;
+  padding-bottom: 12rem;
+
+  &__title {
+    font-size: 5.5rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__cta {
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+    z-index: 1;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    border: none;
+    color: var(--text-200);
+    transition: color 100ms ease-in-out;
+    text-decoration: none;
+    cursor: pointer;position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -.25rem;
+      left: 3px;
+      width: 35%;
+      height: 1px;
+      background: var(--text-200);
+      transition: width 125ms ease-in-out;
+    }
+
+    &:hover {
+      color: var(--text-200);
+      &::after {
+        width: 95%;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.gradient {
+  background: linear-gradient(-45deg,#FC5C7D,#6A82FB,#FC5C7D,#6A82FB);
+  background-color: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+  color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 15s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+   background-position:0 50%
+  }
+  50% {
+   background-position:100% 50%
+  }
+  to {
+   background-position:0 50%
+  }
+ }
+
+ .section__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 48px;
+  color: white;
+
+  >span {
+    background: linear-gradient(-90deg, #eba7b0,#ecc2c7);
+    background-clip: text;
+    --webkit-background-clip: text;
+    --webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  >img {
+    height: 48px;
+    width: 48px;
+    aspect-ratio: 1/1;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+
+    >img {
+      height: 28px;
+      width: 28px;
+    }
+  }
+ }
+
+ .description {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 14px;
+  margin-bottom: 12rem;
+
+  >img {
+    height: 16px;
+    width: 16px;
+    margin-bottom: -.2rem;
+    aspect-ratio: 1/1;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+    font-size: 12px;
+    max-width: 60%;
+    margin-bottom: 12rem;
+
+    >img {
+      height: 14px;
+      width: 14px;
+    }
+  }
+ }
+
+ .work-list {
+
+ }
