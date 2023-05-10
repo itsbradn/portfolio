@@ -1,0 +1,95 @@
+<script>
+  const wrapperEl = document.getElementById("work-scroller-wrapper");
+  const scrollEl = document.getElementById("work-scroller");
+  if (scrollEl && wrapperEl) {
+    let scrollDiff = 350 + 16;
+    wrapperEl.addEventListener("wheel", (evt) => {
+      evt.preventDefault();
+      let left =
+        evt.deltaY < 0
+          ? wrapperEl.scrollLeft - scrollDiff
+          : wrapperEl.scrollLeft + scrollDiff;
+      wrapperEl.scrollTo({ behavior: "smooth", left, top: 0 });
+    });
+
+    let currentPos = wrapperEl.scrollLeft;
+
+    const update = () => {
+      const newPos = wrapperEl.scrollLeft;
+      const diff = newPos - currentPos;
+      const speed = diff * 0.35;
+
+      scrollEl.style.transform = `skewX(${speed}deg)`;
+
+      currentPos = newPos;
+
+      requestAnimationFrame(update);
+    };
+
+    update();
+  }
+</script>
+
+<div id="work-scroller-wrapper">
+  <div id="work-scroller" class="work-list">
+    <a class="work-list__item" href="https://proton-cloud.com/">
+      <div class="work-list__item-header">
+        <img
+          class="work-list__item-logo"
+          src="https://alpha.proton-cloud.com/assets/logo.png"
+          alt=""
+        />
+        <div class="work-list__item-title">
+          <h1>Proton-Cloud</h1>
+          <h3>Server Hosting</h3>
+        </div>
+      </div>
+      <div class="work-list__item-body">
+        <h1>Role</h1>
+        <p>CTO, Developer</p>
+        <h1>What I do</h1>
+        <p>
+          I develop front and backend of the main website and billing panel,
+          along with managing servers and expansion.
+        </p>
+      </div>
+    </a>
+    <a class="work-list__item" href="#">
+      <div class="work-list__item-header">
+        <img class="work-list__item-logo" src="/icon.png" alt="" />
+        <div class="work-list__item-title">
+          <h1>bradn.dev</h1>
+          <h3>Development</h3>
+        </div>
+      </div>
+      <div class="work-list__item-body">
+        <h1>Role</h1>
+        <p>CEO, Developer</p>
+        <h1>What I do</h1>
+        <p>Develop products for customers, and manage business operations.</p>
+      </div>
+    </a>
+    <a class="work-list__item" href="https://stats.bradn.dev/">
+      <div class="work-list__item-header">
+        <img
+          class="work-list__item-logo"
+          src="https://stats.bradn.dev/_nuxt/logo-light.e9402eea.svg?data"
+          alt=""
+        />
+        <div class="work-list__item-title">
+          <h1>bradn stats</h1>
+          <h3>Game Statistics</h3>
+        </div>
+      </div>
+      <div class="work-list__item-body">
+        <h1>Role</h1>
+        <p>CEO, Developer</p>
+        <h1>What I do</h1>
+        <p>
+          I developed and maintained the website until 2022, when I moved on to
+          other projects.
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
