@@ -402,6 +402,11 @@ section {
       &.highlighted {
         color: var(--text-100);
       }
+      
+  @media screen and (max-width: 768px) {
+    font-size: .75rem;
+    height: 1.25rem;
+  }
     }
 
   }
@@ -436,6 +441,11 @@ section {
         color: var(--text-100);
       }
     }
+    @media screen and (max-width: 768px) {
+      height: .75rem;
+      padding: .25rem;
+      gap: .5rem;
+    }
   }
 
   &__score {
@@ -450,6 +460,10 @@ section {
     font-size: 24px;
     font-weight: 600;
     color: var(--text-600);
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+      margin-right: 8px;
+    }
   }
 }
 
