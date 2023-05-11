@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroText from "../components/HeroText.astro";
 import WorkList from "../components/WorkList.astro";
+import DiscordIcon from "../components/icons/DiscordIcon.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
 ---
 
 <script>
@@ -41,7 +43,16 @@ import WorkList from "../components/WorkList.astro";
 			<h1 style="font-size: 120px; margin: 0;">hello</h1>
 		</section>
 		<section id="contact">
-			<h1 style="font-size: 120px; margin: 0;">hello</h1>
+			<h1 class="section__title">👋 <span>Get in contact!</span></h1>
+			<p>Connect with me through the following</p>
+			<div class="social-list">
+				<a class="discord" href="https://discord.com/users/263789620007927813"
+					><DiscordIcon /> Discord</a
+				>
+				<a class="github" href="https://github.com/itsbradn"
+					><GithubIcon /> Github</a
+				>
+			</div>
 		</section>
 	</main>
 </Layout>
