@@ -40,17 +40,76 @@ import GithubIcon from "../components/icons/GithubIcon.astro";
 			<WorkList />
 		</section>
 		<section id="tech">
-			<h1 style="font-size: 120px; margin: 0;">hello</h1>
+			<h1 class="section__title">
+				👋 <span>Technologies I specialize in.</span>
+			</h1>
+			<p>
+				I use the latest technologies to build fast and light applications &
+				websites so that customers get the best experience possible.
+			</p>
+			<div class="tech-list">
+				<div class="tech-list__header">
+					<h1>My Proficiency Scores</h1>
+				</div>
+				<div class="tech-list__body">
+					<div class="tech-scores__titles">
+						<h1 class="highlighted">Typescript</h1>
+						<h1 class="highlighted">Express</h1>
+						<h1 class="highlighted">VueJS</h1>
+						<h1>AstroJS</h1>
+						<h1>Rust</h1>
+						<h1>React</h1>
+						<h1>Java</h1>
+					</div>
+					<div class="tech-scores__scores">
+						<div class="tech-scores__score-wrapper score-highlight">
+							<div class="tech-scores__score" style="width: 93%"></div>
+							<div class="tech-scores__score-num">98</div>
+						</div>
+						<div class="tech-scores__score-wrapper score-highlight">
+							<div class="tech-scores__score" style="width: 87%"></div>
+							<div class="tech-scores__score-num">87</div>
+						</div>
+						<div class="tech-scores__score-wrapper score-highlight">
+							<div class="tech-scores__score" style="width: 85%"></div>
+							<div class="tech-scores__score-num">85</div>
+						</div>
+						<div class="tech-scores__score-wrapper">
+							<div class="tech-scores__score" style="width: 75%"></div>
+							<div class="tech-scores__score-num">75</div>
+						</div>
+						<div class="tech-scores__score-wrapper">
+							<div class="tech-scores__score" style="width: 75%"></div>
+							<div class="tech-scores__score-num">75</div>
+						</div>
+						<div class="tech-scores__score-wrapper">
+							<div class="tech-scores__score" style="width: 65%"></div>
+							<div class="tech-scores__score-num">65</div>
+						</div>
+						<div class="tech-scores__score-wrapper">
+							<div class="tech-scores__score" style="width: 55%"></div>
+							<div class="tech-scores__score-num">55</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<section id="contact">
 			<h1 class="section__title">👋 <span>Get in contact!</span></h1>
 			<p>Connect with me through the following</p>
 			<div class="social-list">
-				<a class="discord" href="https://discord.com/users/263789620007927813"
+				<a
+					class="discord"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://discord.com/users/263789620007927813"
 					><DiscordIcon /> Discord</a
 				>
-				<a class="github" href="https://github.com/itsbradn"
-					><GithubIcon /> Github</a
+				<a
+					class="github"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://github.com/itsbradn"><GithubIcon /> Github</a
 				>
 			</div>
 		</section>
