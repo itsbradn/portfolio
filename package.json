@@ -17,5 +17,6 @@
     "sass": "^1.62.1",
     "twemoji": "^14.0.2",
     "typewriter-effect": "^2.19.0"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

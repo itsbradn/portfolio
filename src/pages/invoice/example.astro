@@ -1,0 +1,142 @@
+---
+import BareHeader from "../../components/BareHeader.astro";
+import ArrowUpIcon from "../../components/icons/ArrowUpIcon.astro";
+import CreditCardIcon from "../../components/icons/CreditCardIcon.astro";
+import PayPalIcon from "../../components/icons/PayPalIcon.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<script>
+  const invoiceItems = document.querySelectorAll(".invoice-items__item");
+  invoiceItems.forEach((item) => {
+    const itemDetails = item.querySelector(".item-details");
+    const itemDescription = item.querySelector(".item-description");
+    const itemDescriptionContent = itemDescription?.querySelector(
+      ".item-description__content"
+    );
+    if (!itemDetails || !itemDescription || !itemDescriptionContent) return;
+
+    itemDetails.addEventListener("click", () => {
+      const height = itemDescriptionContent.getBoundingClientRect().height;
+      item.classList.toggle("open");
+
+      (itemDescription as HTMLElement).style.height = item.classList.contains(
+        "open"
+      )
+        ? `${height}px`
+        : "0px";
+    });
+  });
+
+  function isNumberKey(evt: any) {
+    var charCode = evt.which ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+    return true;
+  }
+</script>
+
+<Layout
+  title="Invoice #EXAMPLE | braden 🌸"
+  description="Invoice #EXAMPLE details and payment"
+>
+  <BareHeader />
+  <main>
+    <section class="invoice">
+      <h1 class="invoice__title">Invoice #EXAMPLE</h1>
+      <div class="invoice__split">
+        <div class="invoice__content">
+          <div class="invoice__recipient">
+            <div>
+              <h1 class="invoice__sub-title">Bill from</h1>
+              <div class="invoice__recipient-name">Braden</div>
+              <div class="invoice__recipient-contact">www.bradn.dev</div>
+            </div>
+            <div>
+              <h1 class="invoice__sub-title">Bill to</h1>
+              <div class="invoice__recipient-name">Customer</div>
+              <div class="invoice__recipient-contact">customer@example.net</div>
+            </div>
+          </div>
+          <div class="divider light"></div>
+          <h1 class="invoice__sub-title">Invoice Details</h1>
+          <div class="invoice-items">
+            <div class="invoice-items__heading">
+              <div class="heading-item">Item</div>
+              <div class="heading-quantity">Quantity</div>
+              <div class="heading-price">Price</div>
+              <div class="heading-total">Total</div>
+            </div>
+            <div class="invoice-items__item">
+              <div class="item-details">
+                <div class="item-details__item">Test Item</div>
+                <div class="item-details__quantity">1x</div>
+                <div class="item-details__price">$800</div>
+                <div class="item-details__total">$800</div>
+                <div class="item-details__arrow"><ArrowUpIcon /></div>
+              </div>
+              <div class="item-description">
+                <div class="item-description__content">Test content</div>
+              </div>
+            </div>
+            <div class="invoice-items__item">
+              <div class="item-details">
+                <div class="item-details__item">Test Item</div>
+                <div class="item-details__quantity">1x</div>
+                <div class="item-details__price">$800</div>
+                <div class="item-details__total">$800</div>
+                <div class="item-details__arrow"><ArrowUpIcon /></div>
+              </div>
+              <div class="item-description">
+                <div class="item-description__content">Test content</div>
+              </div>
+            </div>
+            <div class="invoice-items__item">
+              <div class="item-details">
+                <div class="item-details__item">Test Item</div>
+                <div class="item-details__quantity">1x</div>
+                <div class="item-details__price">$800</div>
+                <div class="item-details__total">$800</div>
+                <div class="item-details__arrow"><ArrowUpIcon /></div>
+              </div>
+              <div class="item-description">
+                <div class="item-description__content">Test content</div>
+              </div>
+            </div>
+          </div>
+          <div class="invoice__item-total">
+            <h1 class="item-total__title">Grand Total</h1>
+            <div class="item-total__price">$2,400</div>
+          </div>
+        </div>
+        <div class="invoice__pay">
+          <div class="balance-due">
+            <h1 class="balance-due__title">Balance due:</h1>
+            <div class="balance-due__amount">$2,400</div>
+          </div>
+
+          <div class="tip-field">
+            <h1 class="tip-field__title">Add tip</h1>
+            <div class="input-container">
+              <input
+                type="text"
+                id="tip-amount"
+                onkeypress="return /[0-9]/i.test(event.key)"
+                onkeyup="this.setAttribute('value', this.value);"
+              />
+              <label for="tip-amount">Tip</label>
+            </div>
+
+            <button class="button mt-400">
+              <CreditCardIcon />
+              Pay with card
+            </button>
+            <button class="button mt-200 bg-paypal">
+              <PayPalIcon />
+              Pay with PayPal
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
