@@ -1,0 +1,49 @@
+---
+import { SEO } from "astro-seo";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+export interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
+		<SEO
+			title={title}
+			description={description}
+			charset="utf-8"
+			openGraph={{
+				basic: {
+					title,
+					type: "website",
+					image: "/favicon.ico",
+					
+				},
+				
+			}}
+			twitter={{
+				title,
+				description,
+				
+			}},
+			extend={{
+				meta: [
+					{ name: 'theme-color', content: '#FC5C7D'}
+				]
+			}}
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

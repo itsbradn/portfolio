@@ -1,0 +1,57 @@
+---
+const pages = [
+  {
+    slug: undefined,
+    title: "Astro Store",
+    text: "Welcome to the Astro store!",
+  },
+  {
+    slug: "products",
+    title: "Astro products",
+    text: "We have lots of products for you",
+  },
+  {
+    slug: "products/astro-handbook",
+    title: "The ultimate Astro handbook",
+    text: "If you want to learn Astro, you must read this book.",
+  },
+];
+
+interface contentTitle {
+  type: "title";
+  value: string;
+}
+
+interface contentLink {
+  type: "link";
+  value: string;
+  toSlug: string;
+}
+
+interface contentDrop {
+  type: "drop";
+  value: string;
+  children: contentItem;
+}
+
+type contentItem = contentTitle | contentLink | contentDrop;
+
+interface page {
+  contents: contentItem[];
+}
+
+const { slug } = Astro.params;
+const page = pages.find((page) => page.slug === slug);
+if (!page) return Astro.redirect("/404");
+const { title, text } = page;
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <p>{text}</p>
+  </body>
+</html>

@@ -114,6 +114,10 @@ h5 {
 main {
   width: 100%;
   margin-top: 82px;
+
+  &.no-marg {
+    margin-top: -82px;
+  }
 }
 
 section {
@@ -523,7 +527,7 @@ section {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    color: transparent;
+    color: white;
   }
 
   > img {
