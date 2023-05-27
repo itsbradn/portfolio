@@ -11,8 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^6.3.0",
     "@fontsource/poppins": "^4.5.10",
-    "astro": "^2.4.1",
+    "astro": "^2.5.0",
     "astro-seo": "^0.7.2",
     "sass": "^1.62.1",
     "twemoji": "^14.0.2",
