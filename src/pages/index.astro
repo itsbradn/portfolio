@@ -5,113 +5,71 @@ import HeroText from "../components/HeroText.astro";
 import WorkList from "../components/WorkList.astro";
 import DiscordIcon from "../components/icons/DiscordIcon.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
+import TechScores from "../components/TechScores.astro";
+import TechList from "../components/TechList.astro";
 ---
 
 <script>
-	import twemoji from "twemoji";
+  import twemoji from "twemoji";
 
-	twemoji.parse(document.body);
+  twemoji.parse(document.body);
 </script>
 
 <Layout
-	title="braden 🌸"
-	description="Self-taught full stack developer, turning peoples ideas into products."
+  title="braden 🌸"
+  description="Self-taught full stack developer, turning peoples ideas into products."
 >
-	<Header />
-	<!-- Site Content -->
-	<main>
-		<section>
-			<div class="hero">
-				<h1 class="hero__title">
-					Creating easy to<br />use
-					<HeroText />.
-				</h1>
-				<button class="hero__cta header__nav-btn" data-to="work">My Work</button
-				>
-			</div>
-		</section>
-		<p class="description">
-			Hey there! 👋 My name is braden and I'm a self-taught full stack
-			developer. <br /> I'm passionate about turning peoples ideas into real world
-			products.
-		</p>
-		<section id="work">
-			<h1 class="section__title">🚀 <span>My work</span></h1>
-			<WorkList />
-		</section>
-		<section id="tech">
-			<h1 class="section__title">
-				👋 <span>Technologies I specialize in.</span>
-			</h1>
-			<p>
-				I use the latest technologies to build fast and light applications &
-				websites so that customers get the best experience possible.
-			</p>
-			<div class="tech-list">
-				<div class="tech-list__header">
-					<h1>My Proficiency Scores</h1>
-				</div>
-				<div class="tech-list__body">
-					<div class="tech-scores__titles">
-						<h1 class="highlighted">Typescript</h1>
-						<h1 class="highlighted">Express</h1>
-						<h1 class="highlighted">VueJS</h1>
-						<h1>AstroJS</h1>
-						<h1>Rust</h1>
-						<h1>React</h1>
-						<h1>Java</h1>
-					</div>
-					<div class="tech-scores__scores">
-						<div class="tech-scores__score-wrapper score-highlight">
-							<div class="tech-scores__score" style="width: 93%"></div>
-							<div class="tech-scores__score-num">98</div>
-						</div>
-						<div class="tech-scores__score-wrapper score-highlight">
-							<div class="tech-scores__score" style="width: 87%"></div>
-							<div class="tech-scores__score-num">87</div>
-						</div>
-						<div class="tech-scores__score-wrapper score-highlight">
-							<div class="tech-scores__score" style="width: 85%"></div>
-							<div class="tech-scores__score-num">85</div>
-						</div>
-						<div class="tech-scores__score-wrapper">
-							<div class="tech-scores__score" style="width: 75%"></div>
-							<div class="tech-scores__score-num">75</div>
-						</div>
-						<div class="tech-scores__score-wrapper">
-							<div class="tech-scores__score" style="width: 75%"></div>
-							<div class="tech-scores__score-num">75</div>
-						</div>
-						<div class="tech-scores__score-wrapper">
-							<div class="tech-scores__score" style="width: 65%"></div>
-							<div class="tech-scores__score-num">65</div>
-						</div>
-						<div class="tech-scores__score-wrapper">
-							<div class="tech-scores__score" style="width: 55%"></div>
-							<div class="tech-scores__score-num">55</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="contact">
-			<h1 class="section__title">👋 <span>Get in contact!</span></h1>
-			<p>Connect with me through the following</p>
-			<div class="social-list">
-				<a
-					class="discord"
-					target="_blank"
-					rel="noopener noreferrer"
-					href="https://discord.com/users/263789620007927813"
-					><DiscordIcon /> Discord</a
-				>
-				<a
-					class="github"
-					target="_blank"
-					rel="noopener noreferrer"
-					href="https://github.com/itsbradn"><GithubIcon /> Github</a
-				>
-			</div>
-		</section>
-	</main>
+  <Header />
+  <!-- Site Content -->
+  <main>
+    <section>
+      <div class="hero">
+        <h1 class="hero__title">
+          Creating easy to<br />use
+          <HeroText />.
+        </h1>
+        <button class="hero__cta header__nav-btn" data-to="work">My Work</button
+        >
+      </div>
+    </section>
+    <p class="description">
+      Hey there! 👋 My name is braden and I'm a self-taught full stack
+      developer. <br /> I'm passionate about turning peoples ideas into real world
+      products.
+    </p>
+    <section id="work">
+      <h1 class="section__title">🚀 <span>My work</span></h1>
+      <WorkList />
+    </section>
+    <section id="tech">
+      <h1 class="section__title">
+        👋 <span>Technologies I specialize in.</span>
+      </h1>
+      <p>
+        I use the latest technologies to build fast and light applications &
+        websites so that customers get the best experience possible.
+      </p>
+      <!-- <TechScores /> -->
+      <TechList />
+    </section>
+    <section id="contact">
+      <h1 class="section__title">👋 <span>Get in contact!</span></h1>
+      <p>Connect with me through the following</p>
+      <div class="social-list">
+        <a
+          class="discord"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://discord.com/users/263789620007927813"
+          ><DiscordIcon /> Discord</a
+        >
+        <a
+          class="github"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/itsbradn"><GithubIcon /> Github</a
+        >
+      </div>
+    </section>
+  </main>
 </Layout>

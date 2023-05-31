@@ -886,3 +886,40 @@ section {
     background-color: rgb(9, 97, 185);
   }
 }
+
+.tech-showcase {
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  > * {
+    width: 45%;
+    flex-grow: 1;
+  }
+}
+
+.tech-lang {
+  border-radius: 8px;
+  border: 1px solid #151416;
+  padding: 1rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 500;
+    font-size: 16px;
+    > svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__body {
+    margin-top: 1rem;
+    font-weight: 400;
+    color: var(--text-300);
+    font-size: 14px;
+  }
+}
