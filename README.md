@@ -1,4 +1,4 @@
-# Personal Website & Portfolio ✨
+# Personal Portfolio ✨
 
 ## 🔧 Development
 
@@ -9,7 +9,7 @@
 
 Clone the repository and cd into it.
 ```
-git clone https://github.com/itsbradn/website.git
+git clone https://github.com/itsbradn/portfolio.git
 cd website
 ```
 
@@ -35,7 +35,7 @@ yarn run dev
 
 Clone the repository and cd into it.
 ```
-git clone https://github.com/itsbradn/website.git
+git clone https://github.com/itsbradn/portfolio.git
 cd website
 ```
 
